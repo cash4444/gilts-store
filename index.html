@@ -1,26 +1,21 @@
-export default function SimpleStore() {
-  const handleBuy = () => {
-    window.location.href = "mailto:vendor@email.com?subject=New Order&body=Someone wants to buy your product.";
-  };
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Cologne Vendor</title>
+</head>
+<body style="text-align:center;font-family:sans-serif;">
 
-  return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
-      <div className="bg-white rounded-2xl shadow-lg p-6 max-w-sm w-full text-center">
-        <img
-          src="https://via.placeholder.com/300"
-          alt="product"
-          className="rounded-xl mb-4"
-        />
-        <h1 className="text-xl font-bold mb-2">Cool Product</h1>
-        <p className="text-gray-600 mb-4">This is your product description.</p>
-        <p className="text-2xl font-semibold mb-4">$10.00</p>
-        <button
-          onClick={handleBuy}
-          className="bg-black text-white px-4 py-2 rounded-xl w-full"
-        >
-          Buy Now
-        </button>
-      </div>
-    </div>
-  );
-}
+  <h1>Cologne Vendor</h1>
+
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Usdollar100.jpg" width="250">
+
+  <h2>Cologne Vendor - $10</h2>
+
+  <p>Click buy and send $10 on Cash App</p>
+
+  <a href="https://cash.app/$JaxonGiltinan">
+    <button style="padding:15px;font-size:18px;">Buy Now</button>
+  </a>
+
+</body>
+</html>
