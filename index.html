@@ -1,91 +1,26 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Cologne Vendor</title>
-  <style>
-    body {
-      font-family: Arial;
-      background: #f2f2f2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+export default function SimpleStore() {
+  const handleBuy = () => {
+    window.location.href = "mailto:vendor@email.com?subject=New Order&body=Someone wants to buy your product.";
+  };
 
-    .card {
-      background: white;
-      padding: 20px;
-      border-radius: 12px;
-      width: 300px;
-      text-align: center;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-    }
-
-    img {
-      width: 100%;
-      border-radius: 10px;
-    }
-
-    input, textarea, button {
-      width: 100%;
-      margin-top: 10px;
-      padding: 10px;
-      border-radius: 8px;
-      border: 1px solid #ddd;
-    }
-
-    button {
-      background: #00d632;
-      color: white;
-      border: none;
-      cursor: pointer;
-      font-weight: bold;
-    }
-  </style>
-</head>
-
-<body>
-
-<div class="card">
-  <img src="https://images.unsplash.com/photo-1594035910387-fea47794261f">
-
-  <h2>Cologne Vendor</h2>
-  <p>$10</p>
-
-  <input id="name" placeholder="Customer Name">
-  <textarea id="address" placeholder="Shipping Address"></textarea>
-
-  <button onclick="buy()">Pay with Cash App</button>
-</div>
-
-<script>
-  const vendorEmail = "vendor@email.com"; 
-  const cashTag = "JaxonGiltinan";
-
-  function buy() {
-    const name = document.getElementById("name").value;
-    const address = document.getElementById("address").value;
-
-    if(!name || !address){
-      alert("Enter name and address first");
-      return;
-    }
-
-    // Open Cash App
-    window.open(`https://cash.app/$${cashTag}/10`,"_blank");
-
-    // Send vendor email
-    const subject = "New Cologne Order";
-    const body = `New order received!
-Customer: ${name}
-Address: ${address}
-Product: Cologne Vendor
-Price: $10`;
-
-    window.location.href =
-      `mailto:${vendorEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-  }
-</script>
-
-</body>
-</html>
+  return (
+    <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
+      <div className="bg-white rounded-2xl shadow-lg p-6 max-w-sm w-full text-center">
+        <img
+          src="https://via.placeholder.com/300"
+          alt="product"
+          className="rounded-xl mb-4"
+        />
+        <h1 className="text-xl font-bold mb-2">Cool Product</h1>
+        <p className="text-gray-600 mb-4">This is your product description.</p>
+        <p className="text-2xl font-semibold mb-4">$10.00</p>
+        <button
+          onClick={handleBuy}
+          className="bg-black text-white px-4 py-2 rounded-xl w-full"
+        >
+          Buy Now
+        </button>
+      </div>
+    </div>
+  );
+}
